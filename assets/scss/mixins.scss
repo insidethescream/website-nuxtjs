@@ -1,0 +1,62 @@
+@mixin respond-to($media) {
+  @if $media == phone {
+    @media screen and (max-width: $screen-phone-max) {
+      @content;
+    }
+  } @else if $media == tablet-portrait {
+    @media screen and (orientation: portrait)
+    and (min-width: $screen-tablet-min)
+    and (max-width: $screen-tablet-max) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media screen and(min-width: $screen-tablet-min)
+    and (max-width: $screen-tablet-max) {
+      @content;
+    }
+  } @else if $media == tablet-landscape {
+    @media screen and (orientation: landscape)
+    and (min-device-width: $screen-tablet-landscape-min)
+    and (max-device-width: $screen-tablet-landscape-max) {
+      @content;
+    }
+  } @else if $media == all-mobile {
+    @media screen and (max-width: $screen-tablet-max) {
+      @content;
+    }
+  } @else if $media == all-desktop {
+    @media screen and (min-width: $screen-desktop-min) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media screen and(min-width: $screen-desktop-min)
+    and (max-width: $screen-desktop-max) {
+      @content;
+    }
+  } @else if $media == medium-desktop {
+    @media screen and(min-width: $screen-medium-desktop-min) {
+      @content;
+    }
+  } @else if $media == large-desktop {
+    @media screen and (min-width: $screen-large-desktop-min) {
+      @content;
+    }
+  } @else if $media == x-large-desktop {
+    @media screen and (min-width: $screen-x-large-desktop-min) {
+      @content;
+    }
+  } @else if $media == xx-large-desktop {
+    @media screen and (min-width: $screen-xx-large-desktop-min) {
+      @content;
+    }
+  } @else if $media == retina-like {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+      @content;
+    }
+  }
+}
