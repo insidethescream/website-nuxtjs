@@ -49,10 +49,10 @@
         <img class="centered-crop-image" src="~assets/images/class.jpg" alt="">
         <p class="scream__block-title">cours</p>
       </div>
-      <a class="scream__block" id="block-stage" href="/stages" data-aos="fade">
+      <nuxt-link class="scream__block" to="/stages">
         <img class="centered-crop-image" src="~assets/images/stages.jpg" alt="">
         <p class="scream__block-title">stages</p>
-      </a>
+      </nuxt-link>
       <div class="scream__block" id="block-masterclass" data-aos="fade">
         <img class="centered-crop-image" src="~assets/images/masterclass.jpg" alt="">
         <p class="scream__block-title">masterclass</p>
