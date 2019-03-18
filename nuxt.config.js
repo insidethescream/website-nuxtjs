@@ -24,6 +24,20 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   mode: 'spa',
+  modules: ['@nuxtjs/sitemap'],
+  sitemap: {
+    path: 'static/sitemap.xml',
+    generate: false,
+    hostname: 'https://insidethescream.com',
+    routes: [
+      '/cours',
+      '/stages-masterclass',
+      '/coatching-scenique',
+      '/a-propos',
+      '/videos',
+      '/presse'
+    ]
+  },
   /*
   ** Build configuration
   */
