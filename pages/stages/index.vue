@@ -8,7 +8,7 @@
 
     <section id="stages__intro">
       <img class="centered-crop-image" src="~assets/images/stages.jpg" alt="">
-      <h1 class="stage__title">Stages</h1>
+      <h1 class="stage__title">Stages & Masterclasses</h1>
     </section>
 
     <section id="stages__description">
@@ -30,22 +30,26 @@
     <section id="stages__events">
       <div class="stages__events-buttons">
         <button class="stages__events-button" v-on:click="filterKey = 'all'" :class="{ active: filterKey === 'all' }">All</button>
-        <button class="stages__events-button" v-on:click="filterKey = 'level1'" :class="{ active: filterKey === 'level1' }">Level 1</button>
-        <button class="stages__events-button" v-on:click="filterKey = 'level2'" :class="{ active: filterKey === 'level2' }">Level 2</button>
+        <button class="stages__events-button" v-on:click="filterKey = 'stages'" :class="{ active: filterKey === 'stages' }">Stages</button>
+        <button class="stages__events-button" v-on:click="filterKey = 'masterclasses'" :class="{ active: filterKey === 'masterclasses' }">Masterclasses</button>
       </div>
       <div class="stages__events-list">
         <div class="stages__events-block"
           v-bind:key="index"
-          v-for="(stage, index) in filteredStages"
-          :class="{'lvl-1': stage.level === '1', 'lvl-2': stage.level === '2'}"
+          v-for="(event, index) in filteredEvents"
+          :class="{'lvl-1': event.level === '1', 'lvl-2': event.level === '2', 'lvl-m': event.level === 'M'}"
         >
           <div class="stages__events-tag">
-            <p>{{ stage.level }}</p>
+            <p>{{ event.level }}</p>
           </div>
-          <p class="stages__events-title">{{ stage.title }} <span class="lvl-1"><br>[niveau {{ stage.level }}]</span></p>
-          <p class="stages__events-text"><span class="underline">Dates:</span> {{ stage.date }}</p>
-          <p class="stages__events-text"><span class="underline">Lieu:</span> {{ stage.place }}</p>
-          <p class="stages__events-text"><span class="underline">Tarif:</span> {{ stage.price }}</p>
+          <p class="stages__events-title">
+            {{ event.title }}
+            <span class="lvl-1" v-if="event.type != 'masterclass'"><br>[niveau {{ event.level }}]</span>
+            <span class="lvl-1" v-if="event.type === 'masterclass'"><br>[{{ event.type }}]</span>
+          </p>
+          <p class="stages__events-text"><span class="underline">Dates:</span> {{ event.date }}</p>
+          <p class="stages__events-text"><span class="underline">Lieu:</span> {{ event.place }}</p>
+          <p class="stages__events-text"><span class="underline">Tarif:</span> {{ event.price }}</p>
         </div>
       </div>
     </section>
@@ -54,32 +58,32 @@
 </template>
 
 <script>
-import stagesJSON from '~/assets/json/stages.json'
+import eventsJSON from '~/static/json/stages-masterclasses.json'
 
 export default {
   data () {
     return {
       message: 'Hello Vue!',
-      stages: null,
+      events: null,
       filterKey: 'all'
     }
   },
   computed: {
-    filteredStages () {
+    filteredEvents () {
       return this[this.filterKey]
     },
     all () {
-      return this.stages
+      return this.events
     },
-    level1 () {
-      return _.filter(this.stages, {level: "1"})
+    stages () {
+      return _.filter(this.events, {type: "stage"})
     },
-    level2 () {
-      return _.filter(this.stages, {level: "2"})
+    masterclasses () {
+      return _.filter(this.events, {type: "masterclass"})
     }
   },
   created () {
-    this.stages = stagesJSON
+    this.events = eventsJSON
   }
 }
 </script>
@@ -256,6 +260,17 @@ export default {
   }
   .stages__events-title span {
     color: #e78353;
+  }
+}
+.stages__events-block.lvl-m {
+  .stages__events-tag {
+    background: #7e4ba8;
+  }
+  .stages__events-title span {
+    color: #7e4ba8;
+  }
+  p {
+    left: 17px;
   }
 }
 

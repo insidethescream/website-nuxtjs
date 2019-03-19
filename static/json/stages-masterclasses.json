@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Stage voix saturées",
+    "type": "stage",
+    "level": "1",
+    "date": "7 et 8 janvier 2019",
+    "place": "Studio des variétés, Paris 11e",
+    "price": "180€"
+  },
+  {
+    "title": "Stage voix saturées",
+    "type": "stage",
+    "level": "2",
+    "date": "22 et 23 mars 2019",
+    "place": "Studio des variétés, Paris 11e",
+    "price": "180€"
+  },
+  {
+    "title": "Stage voix saturées",
+    "type": "stage",
+    "level": "2",
+    "date": "3 et 4 mai 2019",
+    "place": "Studio des variétés, Paris 11e",
+    "price": "180€"
+  },
+  {
+    "title": "Stage voix saturées",
+    "type": "stage",
+    "level": "1",
+    "date": "10 et 11 juillet 2019",
+    "place": "Studio des variétés, Paris 11e",
+    "price": "180€"
+  },
+  {
+    "title": "Stage voix saturées",
+    "type": "stage",
+    "level": "2",
+    "date": "20 et 21 novembre 2019",
+    "place": "Studio des variétés, Paris 11e",
+    "price": "180€"
+  },
+  {
+    "title": "Stage voix saturées",
+    "type": "stage",
+    "level": "1",
+    "date": "5 et 6 décembre 2019",
+    "place": "Studio des variétés, Paris 11e",
+    "price": "180€"
+  },
+  {
+    "title": "Masterclass voix saturées",
+    "type": "masterclass",
+    "level": "M",
+    "date": "18 décembre 2019",
+    "place": "Olympia",
+    "price": "5€"
+  },
+  {
+    "title": "Masterclass voix saturées",
+    "type": "masterclass",
+    "level": "M",
+    "date": "20 avril 2020",
+    "place": "Olympia",
+    "price": "5€"
+  },
+  {
+    "title": "Masterclass voix saturées",
+    "type": "masterclass",
+    "level": "M",
+    "date": "12 mai 2020",
+    "place": "Olympia",
+    "price": "5€"
+  }
+]

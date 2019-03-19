@@ -31,7 +31,7 @@ module.exports = {
     hostname: 'https://insidethescream.com',
     routes: [
       '/cours',
-      '/stages-masterclass',
+      '/stages-masterclasses',
       '/coatching-scenique',
       '/a-propos',
       '/videos',

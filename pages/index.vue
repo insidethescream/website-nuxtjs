@@ -5,6 +5,34 @@
 
     <section id="home">
       <img class="logo" src="~assets/images/logo-white.png" alt="logo-its">
+      <a class="js-scrollTo" href="#scream"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+    </section>
+
+    <section id="scream">
+      <div class="scream__block" id="block-class" data-aos="fade">
+        <img class="centered-crop-image" src="~assets/images/class.jpg" alt="">
+        <p class="scream__block-title">cours</p>
+      </div>
+      <nuxt-link class="scream__block" to="/stages" data-aos="fade">
+        <img class="centered-crop-image" src="~assets/images/stages.jpg" alt="">
+        <p class="scream__block-title">stages et masterclasses</p>
+      </nuxt-link>
+      <div class="scream__block" id="block-masterclasses" data-aos="fade">
+        <img class="centered-crop-image" src="~assets/images/masterclass.jpg" alt="">
+        <p class="scream__block-title">coatching scénique</p>
+      </div>
+      <div class="scream__block" id="block-about" data-aos="fade">
+        <img class="centered-crop-image" src="~assets/images/about.jpg" alt="">
+        <p class="scream__block-title">à propos</p>
+      </div>
+      <div class="scream__block" id="block-videos" data-aos="fade">
+        <img class="centered-crop-image" src="~assets/images/videos.jpg" alt="">
+        <p class="scream__block-title">vidéos</p>
+      </div>
+      <div class="scream__block" id="block-press" data-aos="fade">
+        <img class="centered-crop-image" src="~assets/images/press.jpg" alt="">
+        <p class="scream__block-title">presse</p>
+      </div>
       <a class="js-scrollTo" href="#about"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </section>
 
@@ -41,34 +69,6 @@
         </div>
       </div>
 
-      <a class="js-scrollTo" href="#scream"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-    </section>
-
-    <section id="scream">
-      <div class="scream__block" id="block-class" data-aos="fade">
-        <img class="centered-crop-image" src="~assets/images/class.jpg" alt="">
-        <p class="scream__block-title">cours</p>
-      </div>
-      <nuxt-link class="scream__block" to="/stages">
-        <img class="centered-crop-image" src="~assets/images/stages.jpg" alt="">
-        <p class="scream__block-title">stages</p>
-      </nuxt-link>
-      <div class="scream__block" id="block-masterclass" data-aos="fade">
-        <img class="centered-crop-image" src="~assets/images/masterclass.jpg" alt="">
-        <p class="scream__block-title">masterclass</p>
-      </div>
-      <div class="scream__block" id="block-about" data-aos="fade">
-        <img class="centered-crop-image" src="~assets/images/about.jpg" alt="">
-        <p class="scream__block-title">à propos</p>
-      </div>
-      <div class="scream__block" id="block-videos" data-aos="fade">
-        <img class="centered-crop-image" src="~assets/images/videos.jpg" alt="">
-        <p class="scream__block-title">vidéos</p>
-      </div>
-      <div class="scream__block" id="block-press" data-aos="fade">
-        <img class="centered-crop-image" src="~assets/images/press.jpg" alt="">
-        <p class="scream__block-title">presse</p>
-      </div>
       <a class="js-scrollTo" href="#contact"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </section>
 

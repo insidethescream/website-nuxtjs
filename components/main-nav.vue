@@ -2,8 +2,8 @@
   <nav id="main-nav">
     <ul>
       <li class="nav__home"><a class="js-scrollTo" href="#home">Accueil</a></li>
-      <li class="nav__about"><a class="js-scrollTo" href="#about">À propos</a></li>
       <li class="nav__scream"><a class="js-scrollTo" href="#scream">Scream</a></li>
+      <li class="nav__about"><a class="js-scrollTo" href="#about">À propos</a></li>
       <li class="nav__contact"><a class="js-scrollTo" href="#contact">Contact</a></li>
     </ul>
   </nav>
