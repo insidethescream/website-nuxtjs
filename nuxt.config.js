@@ -75,9 +75,6 @@ module.exports = {
         })
       }
     }
-  },
-  router: {
-    base: '/website-nuxtjs/'
   }
 }
 
