@@ -3,12 +3,12 @@
 
     <main-nav></main-nav>
 
-    <section id="home">
+    <section id="home" ref="homeSection" :style="sectionStyle">
       <img class="logo" src="~assets/images/logo-white.png" alt="logo-its">
       <a class="js-scrollTo" href="#scream"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </section>
 
-    <section id="scream">
+    <section id="scream" ref="screamSection" :style="sectionStyle">
       <div class="scream__block" id="block-class" data-aos="fade">
         <img class="centered-crop-image" src="~assets/images/class.jpg" alt="">
         <p class="scream__block-title">cours</p>
@@ -36,7 +36,7 @@
       <a class="js-scrollTo" href="#about"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </section>
 
-    <section id="about">
+    <section id="about" ref="aboutSection">
       <div class="about__wrapper">
         <div class="about__box-title">
           <h1 class="about__title">Inside The Scream</h1>
@@ -72,7 +72,7 @@
       <a class="js-scrollTo" href="#contact"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </section>
 
-    <section id="contact">
+    <section id="contact" ref="contactSection" :style="sectionStyle">
       <h2 class="contact__title">Contact</h2>
       <form id="contact__form" action="https://formspree.io/tiffany.vachez@outlook.com" method="POST">
         <input class="contact__input" type="text" name="name" placeholder="Nom">
@@ -108,75 +108,6 @@
 
 <script>
 import AOS from 'aos'
-
-$(document).ready(function(){
-
-  $(window).resize(function() {
-    $('#home, #scream, #contact').height($(window).height()); // Set the height of the window to the .home
-  });
-
-  $(window).trigger('resize');
-
-  AOS.init({
-    duration: 800,
-    delay: 50,
-  });
-
-  var top1 = $('#home').offset().top;
-  var top2 = $('#about').offset().top;
-  var top3 = $('#scream').offset().top;
-  var top4 = $('#contact').offset().top;
-  var scrollPos = $(document).scrollTop();
-
-  $('.nav__home a, .nav__about a, .nav__scream a, .nav__contact a').removeClass('current');
-  if (scrollPos >= top1 && scrollPos < top2) {
-    $('.nav__home a').addClass('current');
-  } else if (scrollPos >= top2 && scrollPos < top3) {
-    $('.nav__about a').addClass('current');
-  } else if (scrollPos >= top3 && scrollPos < top4) {
-    $('.nav__scream a').addClass('current');
-  } else if (scrollPos >= top3) {
-    $('.nav__contact a').addClass('current');
-  }
-
-  $(window).scroll(function(){
-
-    AOS.refresh();
-
-    var $scrollTop = $(window).scrollTop(),
-        $windowHeight = $(window).height();
-
-    if($scrollTop > 0) {
-        $("#main-nav").addClass("fixed");
-    }
-    else {
-        $("#main-nav").removeClass("fixed");
-    }
-
-    var scrollPos = $(document).scrollTop();
-    $('.nav__home a, .nav__about a, .nav__scream a, .nav__contact a').removeClass('current');
-    if (scrollPos >= top1 && scrollPos < top2) {
-      $('.nav__home a').addClass('current');
-    } else if (scrollPos >= top2 && scrollPos < top3) {
-      $('.nav__about a').addClass('current');
-    } else if (scrollPos >= top3 && scrollPos < top4) {
-      $('.nav__scream a').addClass('current');
-    } else if (scrollPos >= top3) {
-      $('.nav__contact a').addClass('current');
-    }
-
-
-  });
-
-	$('.js-scrollTo').on('click', function() {
-		var page = $(this).attr('href');
-
-		$('html, body').animate( { scrollTop: $(page).offset().top }, 600 );
-		return false;
-	});
-
-});
-
 import MainNav from '~/components/main-nav.vue'
 import MainFooter from '~/components/main-footer.vue'
 
@@ -198,6 +129,46 @@ export default {
         { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' }
       ]
     }
+  },
+  data () {
+    return {
+      isScrolled: false,
+      scrollTop: 0
+    };
+  },
+  mounted() {
+    AOS.init({
+      duration: 800,
+      delay: 50,
+    });
+
+    $('.js-scrollTo').on('click', function() {
+      var page = $(this).attr('href');
+
+      $('html, body').animate( { scrollTop: $(page).offset().top }, 600 );
+      return false;
+    });
+  },
+  methods: {
+    triggerScroll () {
+      this.scrollTop = window.scrollY;
+      this.isScrolled = window.scrollY > 0;
+      AOS.refresh();
+    }
+  },
+  computed: {
+    windowHeight() {
+      return window.innerHeight
+    },
+    sectionStyle() {
+      return { height: this.windowHeight + 'px' }
+    }
+  },
+  beforeMount () {
+    window.addEventListener('scroll', this.triggerScroll);
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.triggerScroll);
   }
 }
 </script>

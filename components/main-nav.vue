@@ -1,13 +1,57 @@
 <template>
-  <nav id="main-nav">
+  <nav id="main-nav" :class="{'fixed': isScrolled}">
     <ul>
-      <li class="nav__home"><a class="js-scrollTo" href="#home">Accueil</a></li>
-      <li class="nav__scream"><a class="js-scrollTo" href="#scream">Scream</a></li>
-      <li class="nav__about"><a class="js-scrollTo" href="#about">À propos</a></li>
-      <li class="nav__contact"><a class="js-scrollTo" href="#contact">Contact</a></li>
+      <li class="nav__home">
+        <a class="js-scrollTo" href="#home" :class="{'current': scrollTop >= homeSectionTop && scrollTop < screamSectionTop}">Accueil</a>
+      </li>
+      <li class="nav__scream">
+        <a class="js-scrollTo" href="#scream" :class="{'current': scrollTop >= screamSectionTop && scrollTop < aboutSectionTop}">Scream</a>
+      </li>
+      <li class="nav__about">
+        <a class="js-scrollTo" href="#about" :class="{'current': scrollTop >= aboutSectionTop && scrollTop < contactSectionTop}">À propos</a>
+      </li>
+      <li class="nav__contact">
+        <a class="js-scrollTo" href="#contact" :class="{'current': scrollTop >= contactSectionTop}">Contact</a>
+      </li>
     </ul>
   </nav>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      isScrolled: false,
+      scrollTop: 0,
+      homeSectionTop: 0,
+      aboutSectionTop: 0,
+      screamSectionTop: 0,
+      contactSectionTop: 0
+    };
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.homeSectionTop = this.$parent.$refs.homeSection.offsetTop;
+      this.aboutSectionTop = this.$parent.$refs.aboutSection.offsetTop;
+      this.screamSectionTop = this.$parent.$refs.screamSection.offsetTop;
+      this.contactSectionTop = this.$parent.$refs.contactSection.offsetTop;
+    })
+  },
+  methods: {
+    handleScroll () {
+      this.scrollTop = window.scrollY;
+      this.isScrolled = window.scrollY > 0;
+    }
+  },
+  beforeMount () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+}
+</script>
+
 
 <style lang="scss">
 #main-nav {
