@@ -1,14 +1,14 @@
 <template>
   <div id="stages">
 
-    <nuxt-link class="stage__back" to="/">
+    <nuxt-link class="stages__back" to="/">
       <i class="fa fa-angle-left"></i>
-      <img class="stage__logo" src="~assets/images/logo-white.png" alt="logo-its">
+      <img class="stages__logo" src="~static/images/logo-white.png" alt="logo-its">
     </nuxt-link>
 
     <section id="stages__intro">
-      <img class="centered-crop-image" src="~assets/images/stages.jpg" alt="">
-      <h1 class="stage__title">Stages & Masterclasses</h1>
+      <img class="centered-crop-image" src="~static/images/stages.jpg" alt="">
+      <h1 class="stages__title">Stages & Masterclasses</h1>
     </section>
 
     <section id="stages__description">
@@ -67,16 +67,34 @@
       </div>
     </section>
 
+    <main-footer></main-footer>
+
   </div>
 </template>
 
 <script>
 import eventsJSON from '~/static/json/stages-masterclasses.json'
 import Modal from '~/components/modal.vue'
+import MainFooter from '~/components/main-footer.vue'
 
 export default {
   components: {
-    Modal
+    Modal,
+    MainFooter
+  },
+  head () {
+    return {
+      title: 'Stage - Inside the Scream',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Ma description personnalisée' }
+      ],
+      script: [
+        { src: 'https://use.fontawesome.com/0551651585.js' }
+      ],
+      link: [
+        { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' }
+      ]
+    }
   },
   data () {
     return {
@@ -134,7 +152,7 @@ export default {
   }
 }
 
-.stage__back {
+.stages__back {
   height: 70px;
   position: absolute;
   z-index: 1;
@@ -149,11 +167,11 @@ export default {
   }
 }
 
-.stage__logo {
+.stages__logo {
   height: 100%;
 }
 
-.stage__title {
+.stages__title {
   font-size: 30px;
   color: white;
   z-index: 1;

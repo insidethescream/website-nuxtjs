@@ -4,33 +4,33 @@
     <main-nav></main-nav>
 
     <section id="home" ref="homeSection" :style="sectionStyle">
-      <img class="logo" src="~assets/images/logo-white.png" alt="logo-its">
+      <img class="logo" src="~static/images/logo-white.png" alt="logo-its">
       <a class="js-scrollTo" href="#scream"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </section>
 
     <section id="scream" ref="screamSection" :style="sectionStyle">
       <div class="scream__block" id="block-class" data-aos="fade">
-        <img class="centered-crop-image" src="~assets/images/class.jpg" alt="">
+        <img class="centered-crop-image" src="~static/images/class.jpg" alt="">
         <p class="scream__block-title">cours</p>
       </div>
-      <nuxt-link class="scream__block" to="/stages" data-aos="fade">
-        <img class="centered-crop-image" src="~assets/images/stages.jpg" alt="">
+      <nuxt-link class="scream__block" id="block-stages" to="/stages" data-aos="fade">
+        <img class="centered-crop-image" src="~static/images/stages.jpg" alt="">
         <p class="scream__block-title">stages et masterclasses</p>
       </nuxt-link>
       <div class="scream__block" id="block-masterclasses" data-aos="fade">
-        <img class="centered-crop-image" src="~assets/images/masterclass.jpg" alt="">
+        <img class="centered-crop-image" src="~static/images/masterclass.jpg" alt="">
         <p class="scream__block-title">coatching scénique</p>
       </div>
       <div class="scream__block" id="block-about" data-aos="fade">
-        <img class="centered-crop-image" src="~assets/images/about.jpg" alt="">
+        <img class="centered-crop-image" src="~static/images/about.jpg" alt="">
         <p class="scream__block-title">à propos</p>
       </div>
-      <div class="scream__block" id="block-videos" data-aos="fade">
-        <img class="centered-crop-image" src="~assets/images/videos.jpg" alt="">
+      <nuxt-link class="scream__block" id="block-videos" to="/videos" data-aos="fade">
+        <img class="centered-crop-image" src="~static/images/videos.jpg" alt="">
         <p class="scream__block-title">vidéos</p>
-      </div>
+      </nuxt-link>
       <div class="scream__block" id="block-press" data-aos="fade">
-        <img class="centered-crop-image" src="~assets/images/press.jpg" alt="">
+        <img class="centered-crop-image" src="~static/images/press.jpg" alt="">
         <p class="scream__block-title">presse</p>
       </div>
       <a class="js-scrollTo" href="#about"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -195,7 +195,7 @@ export default {
 
 #home {
   align-items: center;
-  background: url('~assets/images/background-home-overlay.png') no-repeat center fixed;
+  background: url('~static/images/background-home-overlay.png') no-repeat center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -392,7 +392,7 @@ export default {
   position: relative;
   flex-direction: column;
   // background-color: #eaeaea;
-  background-image: url('~assets/images/pattern.jpg');
+  background-image: url('~static/images/pattern.jpg');
   background-repeat: repeat;
   background-size: 250px;
 }
