@@ -33,11 +33,24 @@
         <button class="stages__events-button" v-on:click="filterKey = 'stages'" :class="{ active: filterKey === 'stages' }">Stages</button>
         <button class="stages__events-button" v-on:click="filterKey = 'masterclasses'" :class="{ active: filterKey === 'masterclasses' }">Masterclasses</button>
       </div>
+
+      <modal
+        v-if="isModalOpened"
+        width="700px"
+        @closed="closeModal()"
+      >
+        <div class="modal__content">
+          <h2 class="modal__title">{{ modalData.title }}</h2>
+          <h3 class="modal__subtitle">LE CHANT SATURÉ :<br>POUSSER SA VOIX SANS DOMMAGE AVEC DAVID FÉRON</h3>
+        </div>
+      </modal>
+
       <div class="stages__events-list">
         <div class="stages__events-block"
           v-bind:key="index"
           v-for="(event, index) in filteredEvents"
           :class="{'lvl-1': event.level === '1', 'lvl-2': event.level === '2', 'lvl-m': event.level === 'M'}"
+          @click="openModal(event)"
         >
           <div class="stages__events-tag">
             <p>{{ event.level }}</p>
@@ -59,13 +72,18 @@
 
 <script>
 import eventsJSON from '~/static/json/stages-masterclasses.json'
+import Modal from '~/components/modal.vue'
 
 export default {
+  components: {
+    Modal
+  },
   data () {
     return {
-      message: 'Hello Vue!',
       events: null,
-      filterKey: 'all'
+      filterKey: 'all',
+      isModalOpened: false,
+      modalData: null
     }
   },
   computed: {
@@ -80,6 +98,15 @@ export default {
     },
     masterclasses () {
       return _.filter(this.events, {type: "masterclass"})
+    }
+  },
+  methods: {
+    openModal(data) {
+      this.modalData = data
+      this.isModalOpened = true
+    },
+    closeModal() {
+      this.isModalOpened = false
     }
   },
   created () {
