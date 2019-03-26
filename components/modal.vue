@@ -2,7 +2,7 @@
   <div class="modal">
     <div class="modal__container">
       <div class="modal__body" :style="bodyStyle">
-        <img src="~assets/images/icons/cross.png" class="modal__close" @click="close"/>
+        <img src="~static/images/icons/cross.png" class="modal__close" @click="close"/>
         <slot></slot>
       </div>
     </div>
