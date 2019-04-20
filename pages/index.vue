@@ -29,10 +29,10 @@
         <img class="centered-crop-image" src="~static/images/videos.jpg" alt="">
         <p class="scream__block-title">vidéos</p>
       </nuxt-link>
-      <div class="scream__block" id="block-press" data-aos="fade">
+      <nuxt-link class="scream__block" id="block-press" to="/presse" data-aos="fade">
         <img class="centered-crop-image" src="~static/images/press.jpg" alt="">
         <p class="scream__block-title">presse</p>
-      </div>
+      </nuxt-link>
       <a class="js-scrollTo" href="#about"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </section>
 
