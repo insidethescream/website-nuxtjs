@@ -4,7 +4,7 @@
     <main-nav></main-nav>
 
     <section id="home" ref="homeSection" :style="sectionStyle">
-      <img class="logo" src="~static/images/logo-white.png" alt="logo-its">
+      <!-- <img class="logo" src="~static/images/logo blanc texture 500x500px web transparent.png" alt="logo-its"> -->
       <a class="js-scrollTo" href="#scream"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </section>
 
@@ -14,19 +14,19 @@
         <p class="scream__block-title">cours</p>
       </div>
       <nuxt-link class="scream__block" id="block-stages" to="/stages" data-aos="fade">
-        <img class="centered-crop-image" src="~static/images/stages.jpg" alt="">
+        <img class="centered-crop-image" src="~static/images/masterclass.jpg" alt="">
         <p class="scream__block-title">stages et masterclasses</p>
       </nuxt-link>
-      <div class="scream__block" id="block-masterclasses" data-aos="fade">
-        <img class="centered-crop-image" src="~static/images/masterclass.jpg" alt="">
+      <div class="scream__block" id="block-coatching" data-aos="fade">
+        <img class="centered-crop-image" src="~static/images/coatching.jpg" alt="">
         <p class="scream__block-title">coatching scénique</p>
       </div>
       <div class="scream__block" id="block-about" data-aos="fade">
         <img class="centered-crop-image" src="~static/images/about.jpg" alt="">
-        <p class="scream__block-title">à propos</p>
+        <p class="scream__block-title">c kiki cri</p>
       </div>
       <nuxt-link class="scream__block" id="block-videos" to="/videos" data-aos="fade">
-        <img class="centered-crop-image" src="~static/images/videos.jpg" alt="">
+        <img class="centered-crop-image" src="~static/images/tuto_chant_metal.png" alt="">
         <p class="scream__block-title">vidéos</p>
       </nuxt-link>
       <nuxt-link class="scream__block" id="block-press" to="/presse" data-aos="fade">
@@ -195,7 +195,7 @@ export default {
 
 #home {
   align-items: center;
-  background: url('~static/images/background-home-overlay.png') no-repeat center fixed;
+  background: url('~static/images/background.jpg') no-repeat center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -216,13 +216,12 @@ export default {
 .fa.fa-angle-down {
   animation: bounce 4s infinite;
   bottom: 20px;
-  color: orange;
+  color: #DDC082;
   font-size: 80px;
   height: 40px;
   left: 0; right: 0;
   line-height: 40px;
   margin: auto;
-  opacity: .8;
   position: absolute;
   transition: opacity .4s ease-out;
   width: 50px;
@@ -247,22 +246,28 @@ export default {
 }
 
 .about__wrapper {
+  // background: lighten(#DDC082, 25%);
   padding: 70px 15%;
 }
 
 .about__box-title {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .about__title {
+  color: #800000;
   text-align: center;
-  font-size: 30px;
+  font-size: 31px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
 }
 
 .about__comp {
   font-size: 15px;
+  letter-spacing: 2px;
   text-align: center;
   font-style: italic;
+  color: darken(#DDC082, 20%);
 }
 
 .about__block {
@@ -274,7 +279,7 @@ export default {
     .about__subtitle {
       border-left: none;
       padding-left: 0;
-      border-right: 5px solid orange;
+      border-right: 5px solid #DDC082;
       padding-right: 15px;
     }
   }
@@ -283,7 +288,8 @@ export default {
 .about__subtitle {
   font-size: 25px;
   margin-bottom: 30px;
-  border-left: 5px solid orange;
+  border-left: 5px solid #DDC082;
+  color: #800000;
   line-height: 30px;
   padding-left: 15px;
 }
@@ -303,7 +309,6 @@ export default {
   align-items: center;
   cursor: pointer;
   display: flex;
-  filter: grayscale(70%);
   justify-content: center;
   width: calc(50% - 18px);
   margin-top: 10px;
@@ -339,12 +344,19 @@ export default {
       transition: all .3s;
     }
   }
+
+  .centered-crop-image {
+    filter: grayscale(70%);
+  }
 }
 
 #block-class .centered-crop-image {
   padding-top: 25%;
 }
-#block-stage .centered-crop-image {
+#block-stages .centered-crop-image {
+  padding-top: 0%;
+}
+#block-coatching .centered-crop-image {
   padding-top: 10%;
 }
 #block-about .centered-crop-image {
@@ -373,9 +385,10 @@ export default {
 
 .scream__block-title {
   text-transform: uppercase;
-  color: white;
+  color: lighten(#DDC082, 25%);
   font-size: 30px;
-  font-family: 'Righteous', cursive;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
   letter-spacing: 3px;
   text-shadow: 0 0 5px rgba(0,0,0,0.7);
   z-index: 1;
@@ -391,7 +404,6 @@ export default {
   align-items: center;
   position: relative;
   flex-direction: column;
-  // background-color: #eaeaea;
   background-image: url('~static/images/pattern.jpg');
   background-repeat: repeat;
   background-size: 250px;
@@ -407,10 +419,27 @@ export default {
   }
 }
 
+.contact__textarea,
+.contact__input {
+  border: 1px solid darken(#B29689, 10%)!important;
+}
+
+.contact__submit {
+  background: #DDC082;
+  transition: background-color .8s;
+
+  &:hover {
+    background: #B29689;
+  }
+}
+
 .contact__title {
-  font-size: 40px;
+  font-size: 32px;
   margin-bottom: 40px;
-  color: #000;
+  color: #B29689;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .contact__social {
@@ -425,12 +454,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #404040;
+  border: 1px solid #B29689;
   border-radius: 50%;
   margin: 0 5px;
 
   i {
     font-size: 20px;
+    color: #B29689;
   }
 }
 </style>

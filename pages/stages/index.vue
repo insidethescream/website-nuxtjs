@@ -7,7 +7,7 @@
     </nuxt-link>
 
     <section id="stages__intro">
-      <img class="centered-crop-image" src="~static/images/stages.jpg" alt="">
+      <img class="centered-crop-image" src="~static/images/masterclass.jpg" alt="">
       <h1 class="stages__title">Stages & Masterclasses</h1>
     </section>
 
@@ -147,8 +147,8 @@ export default {
   overflow: hidden;
 
   .centered-crop-image {
-    padding-top: 20%;
-    filter: grayscale(70%);
+    padding-top: 0%;
+    filter: grayscale(50%);
   }
 }
 
@@ -185,7 +185,7 @@ export default {
   line-height: 60px;
   width: 100%;
   padding-left: 40px;
-  background: linear-gradient(10deg, #20626d 0%, transparent 80%);
+  background: linear-gradient(10deg, #DDC082 0%, transparent 80%);
 }
 
 #stages__description {
@@ -204,8 +204,8 @@ export default {
     left: -25px;
     width: 50px;
     height: 50px;
-    border-top: 5px solid #20626d;
-    border-left: 5px solid #20626d;
+    border-top: 5px solid #800000;
+    border-left: 5px solid #800000;
   }
   &::after {
     content: '';
@@ -214,8 +214,8 @@ export default {
     right: -25px;
     width: 50px;
     height: 50px;
-    border-bottom: 5px solid #20626d;
-    border-right: 5px solid #20626d;
+    border-bottom: 5px solid #800000;
+    border-right: 5px solid #800000;
   }
 }
 
@@ -250,20 +250,20 @@ export default {
   padding: 10px 20px;
   border-radius: 0;
   background: none;
-  color: #20626d;
+  color: #DDC082;
   cursor: pointer;
   line-height: 14px;
-  border: 1px solid #20626d;
+  border: 1px solid #DDC082;
 
   &.active {
-    background: #20626d;
+    background: #DDC082;
     color: white;
   }
 
   &:active, &:focus {
     box-shadow: none;
     outline: none;
-    border: 1px solid #20626d;
+    border: 1px solid #DDC082;
   }
 }
 
@@ -293,26 +293,26 @@ export default {
 
 .stages__events-block.lvl-1 {
   .stages__events-tag {
-    background: #4ea1af;
+    background: #DDC082;
   }
   .stages__events-title span {
-    color: #4ea1af;
+    color: #DDC082;
   }
 }
 .stages__events-block.lvl-2 {
   .stages__events-tag {
-    background: #e78353;
+    background: #800000;
   }
   .stages__events-title span {
-    color: #e78353;
+    color: #800000;
   }
 }
 .stages__events-block.lvl-m {
   .stages__events-tag {
-    background: #7e4ba8;
+    background: #B29689;
   }
   .stages__events-title span {
-    color: #7e4ba8;
+    color: #B29689;
   }
   p {
     left: 17px;

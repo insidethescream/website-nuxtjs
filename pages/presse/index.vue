@@ -174,6 +174,12 @@ export default {
   font-weight: 700;
   padding: 15px 20px;
   line-height: 0;
+  background: #DDC082;
+  transition: background-color .8s;
+
+  &:hover {
+    background: #B29689;
+  }
 }
 
 </style>

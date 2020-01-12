@@ -7,7 +7,7 @@
     </nuxt-link>
 
     <section id="videos__intro">
-      <img class="centered-crop-image" src="~static/images/stages.jpg" alt="">
+      <img class="centered-crop-image" src="~static/images/coatching.jpg" alt="">
       <h1 class="videos__title">Vidéos</h1>
     </section>
 
@@ -82,60 +82,72 @@ export default {
       videosCol1: [
         {
           link: 'https://www.youtube.com/embed/zkGa_BItnag',
-          preview: 'stages.jpg',
-          title: 'Tructruc',
+          preview: 'tuto_chant_metal.png',
+          title: 'Tuto : le chant metal',
           size: 'large'
         },
         {
-          link: 'https://www.youtube.com/embed/zkGa_BItnag',
-          preview: 'stages.jpg',
-          title: 'Blabla',
+          link: 'https://www.youtube.com/embed/DIay3tHBOIc?start=2543',
+          preview: 'je_taime_etc.png',
+          title: 'Je t\aime etc : les grandes voix',
           size: 'small'
         },
         {
           link: 'https://www.youtube.com/embed/zkGa_BItnag',
-          preview: 'stages.jpg',
-          title: 'Toctoc',
+          preview: 'tuto_chant_metal_small.png',
+          title: 'Tuto : le chant metal',
           size: 'small'
         },
         {
-          link: 'https://www.youtube.com/embed/zkGa_BItnag',
-          preview: 'stages.jpg',
-          title: 'Tructruc',
+          link: 'https://www.youtube.com/embed/WdwY3QsJfbA',
+          preview: 'chant_guttural.png',
+          title: 'Le chant guttural',
           size: 'large'
-        }
+        },
       ],
       videosCol2: [
         {
           link: 'https://www.youtube.com/embed/zkGa_BItnag',
-          preview: 'stages.jpg',
-          title: 'Tructruc',
+          preview: 'tuto_chant_metal_small.png',
+          title: 'Tuto : le chant metal',
           size: 'small'
         },
         {
-          link: 'https://www.youtube.com/embed/zkGa_BItnag',
-          preview: 'stages.jpg',
-          title: 'Blabla',
+          link: 'https://www.youtube.com/embed/DIay3tHBOIc?start=2543',
+          preview: 'je_taime_etc.png',
+          title: 'Je t\aime etc : les grandes voix',
           size: 'small'
         },
         {
-          link: 'https://www.youtube.com/embed/zkGa_BItnag',
-          preview: 'stages.jpg',
-          title: 'Toctoc',
+          link: 'https://www.youtube.com/embed/en30M4aqnus',
+          preview: 'preview_masterclass.jpg',
+          title: 'Le plus grand cours de chant du Monde',
           size: 'large'
         },
         {
-          link: 'https://www.youtube.com/embed/zkGa_BItnag',
-          preview: 'stages.jpg',
-          title: 'Blabla',
+          link: 'https://www.youtube.com/embed/DIay3tHBOIc?start=2543',
+          preview: 'je_taime_etc.png',
+          title: 'Je t\aime etc : les grandes voix',
           size: 'small'
         },
         {
           link: 'https://www.youtube.com/embed/zkGa_BItnag',
-          preview: 'stages.jpg',
-          title: 'Toctoc',
+          preview: 'tuto_chant_metal_small.png',
+          title: 'Tuto : le chant metal',
           size: 'small'
-        }
+        },
+        {
+          link: 'https://www.youtube.com/embed/zkGa_BItnag',
+          preview: 'tuto_chant_metal_small.png',
+          title: 'Tuto : le chant metal',
+          size: 'small'
+        },
+        {
+          link: 'https://www.youtube.com/embed/DIay3tHBOIc?start=2543',
+          preview: 'je_taime_etc.png',
+          title: 'Je t\aime etc : les grandes voix',
+          size: 'small'
+        },
       ],
       modalData: null
     }
@@ -204,7 +216,7 @@ export default {
   line-height: 60px;
   width: 100%;
   padding-left: 40px;
-  background: linear-gradient(10deg, #20626d 0%, transparent 80%);
+  background: linear-gradient(10deg, #5B5858 0%, transparent 80%);
 }
 
 .videos__grid {
@@ -268,7 +280,7 @@ export default {
   line-height: 50px;
   width: 100%;
   padding-left: 20px;
-  background: linear-gradient(10deg, #20626d 0%, transparent 80%);
+  background: linear-gradient(10deg, #DDC082 0%, transparent 80%);
 }
 
 .videos__block.small {

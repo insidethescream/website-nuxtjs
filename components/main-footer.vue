@@ -39,7 +39,7 @@ footer {
 
 #signature {
   a {
-    color: orange;
+    color: #DDC082;
 
     &:hover {
       color: white;

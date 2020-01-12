@@ -60,7 +60,7 @@ export default {
   display: flex;
   justify-content: center;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  // background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
   transition: background-color .5s;
@@ -79,7 +79,7 @@ export default {
   li {
     align-items: center;
     display: flex;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     height: 50px;
     justify-content: center;
     padding: 0 30px;
@@ -106,10 +106,10 @@ export default {
     transition: opacity .3s ease-out;
 
     &.current {
-      color: orange;
+      color: #DDC082;
 
       &:hover {
-        color: orange;
+        color: #DDC082;
         opacity: 1;
       }
     }

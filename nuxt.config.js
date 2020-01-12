@@ -14,9 +14,9 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Nunito:400,400i,700' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=PT+Sans' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Righteous' }
     ]
   },
   /*

@@ -91,13 +91,13 @@ button {
   cursor: pointer;
   text-transform: uppercase;
   color: white;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
   font-size: 14px;
 
   &:focus {
     outline: none !important;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px #ccc;
+    border: none;
+    box-shadow: none;
   }
 }
 
